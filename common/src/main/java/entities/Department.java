@@ -5,10 +5,11 @@ import java.util.Set;
 
 import javax.persistence.*;
 
+import org.dozer.Mapping;
 import org.hibernate.annotations.GenericGenerator;
 
 @Entity
-@Table(name = "department")
+@Table(name = "department_info")
 public class Department {
 
     @Id

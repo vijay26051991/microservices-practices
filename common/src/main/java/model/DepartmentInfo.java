@@ -17,6 +17,10 @@ public class DepartmentInfo {
     @NotNull
     private String deptHead;
 
+    public DepartmentInfo() {
+        //empty constructor
+    }
+
     @JsonCreator
     public DepartmentInfo(@JsonProperty("deptId") String deptId,
                           @JsonProperty("deptName") String deptName,

@@ -13,8 +13,9 @@ import org.hibernate.id.IdentifierGenerator;
 
 public class DeptIDGenerator implements IdentifierGenerator {
 
+    @Override
     public Serializable generate(SharedSessionContractImplementor sharedSessionContractImplementor, Object o) throws HibernateException {
-        String sequenceIdentifier = String.valueOf(getNextValue(sharedSessionContractImplementor, "DEPT_ID_SEQ"));
+        String sequenceIdentifier = String.valueOf(getNextValue(sharedSessionContractImplementor, "employee.dpt_id_seq"));
         String deptId = "DEPT_" + StringUtils.leftPad(sequenceIdentifier, 3, '0');
         return deptId;
     }
@@ -23,6 +24,7 @@ public class DeptIDGenerator implements IdentifierGenerator {
         Connection connection = sharedSessionContractImplementor.connection();
         Long sequenceValue = null;
         try {
+            
             PreparedStatement preparedStatement = connection.prepareStatement("SELECT nextval('" + sequenceName + "') AS SEQ");
             ResultSet resultSet = preparedStatement.executeQuery();
             if (resultSet.next()) {

@@ -11,7 +11,7 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 @Entity
-@Table(name = "employee")
+@Table(name = "employee_info")
 public class Employee implements Serializable {
 
     @Id
